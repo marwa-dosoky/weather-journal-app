@@ -6,6 +6,7 @@
 * [Author](#author)
 * [Technologies Used](#technologies-used)
 * [Project Description ](#project-description )
+* [Contact Info ](#contact-info )
 
 ##### Project Name
 Weather Journal
@@ -27,3 +28,6 @@ Updated by Marwa Dosoky
 ##### Project Description 
 Hi, This project is done by Marwa Dosoky, as an assignment in the web development track
 The UI is designed by Udacity team, the JS is added and modified by me
+
+##### Contact Info
+Marwa.dosoky@gmail.com

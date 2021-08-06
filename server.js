@@ -1,6 +1,6 @@
 
 // Setup empty JS object to act as endpoint for all routes
-let projectData ;
+let projectData;
 
 // Express to run server and routes
 const express = require('express');
@@ -24,12 +24,22 @@ app.use(express.static('website'));
 
 // Setup Server
 const port = 3000;
-const server= app.listen(port, ()=>{console.log("server started at port no:"+port)});
+const server = app.listen(port, () => { console.log("server started at port no:" + port) });
 
 app.post('/saveData', saveData);
 
-function saveData (req,res){
-    projectData=req.body;
+app.get('/getData', getData);
+
+function saveData(req, res) {
+	projectData = req.body;
 	console.log(projectData);
 }
+
+
+function getData(req, res) {
+	console.log('getting into server');
+	console.log(projectData);
+	res.send(projectData);
+}
+
 

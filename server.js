@@ -1,12 +1,13 @@
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+let projectData ;
 
 // Express to run server and routes
 const express = require('express');
 
 // Start up an instance of app
 const app = express();
+
 const bodyParser = require('body-parser')
 
 /* Middleware*/
@@ -21,10 +22,14 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
 // Setup Server
 const port = 3000;
-const server= app.listen(port, ()=>{console.log("server started at port no:"+port)})
+const server= app.listen(port, ()=>{console.log("server started at port no:"+port)});
 
+app.post('/saveData', saveData);
 
+function saveData (req,res){
+    projectData=req.body;
+	console.log(projectData);
+}
 

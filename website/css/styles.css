@@ -62,3 +62,13 @@ section {
 .page__footer p{
     color: #fff;
 }
+
+.mainHolder .sectionHolder{
+    display:  inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    width: 45%;
+}
+.sectionHolder h3{
+display: inline;
+}

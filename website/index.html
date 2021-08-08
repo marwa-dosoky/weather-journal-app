@@ -17,23 +17,26 @@
     <header class="main__hero">
       <h2>Weather Journal</h2>
     </header>
-    <article>
-      <div>
-        <input id='zip' placeholder="enter zip code here">
+    <div class="mainHolder">
+      <div class='sectionHolder'>
+        <div>
+          <input id='zip' placeholder="enter zip code here" required>
+        </div>
+        <div>
+          <textarea id="feelings" placeholder="Feelings"></textarea>
+        </div>
+        <div>
+          <button id='generate'>Generate</button>
+        </div>
       </div>
-      <div>
-        <textarea id="feelings" placeholder="Feelings"></textarea>
+      <div class='sectionHolder'>
+        <h3 id='entry'></h3>
+        <div id='entryHolder'>
+          <div id='date'></div>
+          <div id='temp'></div>
+          <div id='content'></div>
+        </div>
       </div>
-      <div>
-        <button id='generate'>Generate</button>
-      </div>
-    </article>
-
-    <h3 id='entry'></h3>
-    <div id='entryHolder'>
-      <div id='date'></div>
-      <div id='temp'></div>
-      <div id='content'></div>
     </div>
 
   </main>

@@ -29,7 +29,6 @@ async function callwetherapi() {
         getWeatherobj();
     }).catch(error => {
         console.error(error)
-        console.log('eeeeeee');
         alert('Problem in retrieving city weater Info, Please check if the zip code is invalid or inapplicable');
     });
     return request;

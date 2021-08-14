@@ -6,7 +6,7 @@ document.getElementById('generate').addEventListener("click", generateWeatherInf
 
 async function generateWeatherInfo() {
     let zipCode = document.getElementById("zip").value;
-   
+
     //check if the zip code is valid. zip code with hyphen/dash not applicable here
     if (!String(zipCode).match("^[0-9]+$")) {
         alert('Please enter valid zip code');
@@ -21,12 +21,17 @@ async function generateWeatherInfo() {
 async function callwetherapi() {
     const request = await fetch(apiURL).then(async request => {
         const allData = await request.json();
+        console.log(allData);
         return allData;
     }).then(allData => {
-        postWeather(allData, '/saveData');
+        return postWeather(allData, '/saveData');
     }).then(() => {
         getWeatherobj();
-    }).catch(error => console.error(error));
+    }).catch(error => {
+        console.error(error)
+        console.log('eeeeeee');
+        alert('Problem in retrieving city weater Info, Please check if the zip code is invalid or inapplicable');
+    });
     return request;
 }
 
@@ -55,8 +60,7 @@ async function postWeather(allData, saveDataUrl) {
 async function getWeatherobj() {
     const request = await fetch('/getData').then(async request => {
         const allData = await request.json();//obj returned form server
-        console.log(allData);
-        entry
+
         document.getElementById('entry').innerHTML = 'Entry';
         document.getElementById('date').innerHTML = '<b>Date: </b>' + allData.date;
         document.getElementById('temp').innerHTML = '<b>Temperature: </b>' + allData.temp;

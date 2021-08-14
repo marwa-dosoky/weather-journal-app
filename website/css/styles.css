@@ -8,6 +8,9 @@ body {
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -57,6 +60,7 @@ section {
     background: #000;
     padding: 3em;
     color: #fff;
+    margin: auto 0;
 }
 
 .page__footer p{

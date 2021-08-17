@@ -33,6 +33,7 @@ app.get('/getData', getData);
 function saveData(req, res) {
 	projectData = req.body;
 	console.log(projectData);
+	res.send('{status:success}');
 }
 
 

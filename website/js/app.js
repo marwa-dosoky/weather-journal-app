@@ -38,9 +38,9 @@ async function callwetherapi() {
 async function postWeather(allData, saveDataUrl) {
     let temp = allData.main.temp
     let feelings = document.getElementById("feelings").value;
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    await fetch(saveDataUrl, {
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let response=await fetch(saveDataUrl, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
@@ -52,7 +52,7 @@ async function postWeather(allData, saveDataUrl) {
             feelings: feelings
         })
     });
-
+return response;
 }
 
 //retrieve the weather content from the server
